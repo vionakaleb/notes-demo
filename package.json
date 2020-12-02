@@ -2,11 +2,12 @@
     "name": "portfolio-note-app",
     "version": "0.1.0",
     "description": "",
-    "main": "index.js",
+    "main": "function.js",
     "scripts": {
         "build": "next build",
-        "dev": "next",
-        "start": "next start"
+        "dev": "next dev",
+        "start": "next start",
+        "deploy": "yarn build && cross-env NODE_ENV=production firebase deploy --only functions,hosting"
     },
     "keywords": [],
     "author": "",
@@ -18,6 +19,9 @@
         "@fortawesome/react-fontawesome": "^0.1.3",
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-source-maps": "0.0.3",
+        "cross-env": "^7.0.3",
+        "firebase-admin": "^9.4.1",
+        "firebase-functions": "^3.12.0",
         "moment": "^2.23.0",
         "next": "^8.0.0-canary.15",
         "next-router": "^1.3.6",
